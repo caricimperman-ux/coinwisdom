@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CoinWisdom - Your expert guide to coin values, rare finds, and collecting. Discover what your coins are worth with our comprehensive price guides.">
+<meta name="keywords" content="coin values, rare coins, coin collecting, numismatics, coin price guide, Morgan dollar, wheat penny, silver quarters">
+<title>CoinWisdom – Your Guide to Coin Values, Rare Finds & Collecting</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #2c2c2c; background: #fafaf8; line-height: 1.7; }
+  a { color: #8b4513; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%); color: #fff; padding: 0; border-bottom: 4px solid #c9a84c; }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 24px 20px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 14px; }
+  .logo-icon { font-size: 42px; }
+  .logo-text h1 { font-size: 2rem; color: #c9a84c; letter-spacing: 1px; }
+  .logo-text p { font-size: 0.9rem; color: #b0afc0; margin-top: 2px; }
+
+  /* Nav */
+  nav { background: #2d2d4e; border-bottom: 1px solid #3d3d6e; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; gap: 0; flex-wrap: wrap; }
+  nav a { color: #c9a84c; padding: 14px 18px; display: block; font-size: 0.9rem; font-family: Arial, sans-serif; letter-spacing: 0.5px; border-bottom: 3px solid transparent; transition: border-color 0.2s; }
+  nav a:hover { border-bottom-color: #c9a84c; text-decoration: none; background: rgba(201,168,76,0.1); }
+
+  /* Hero */
+  .hero { background: linear-gradient(160deg, #f5f0e8 0%, #ede6d6 100%); border-bottom: 1px solid #d4c9a8; padding: 52px 20px; text-align: center; }
+  .hero h2 { font-size: 2.2rem; color: #1a1a2e; margin-bottom: 16px; }
+  .hero p { font-size: 1.1rem; color: #555; max-width: 620px; margin: 0 auto 28px; }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 13px 26px; border-radius: 4px; font-size: 0.95rem; font-family: Arial, sans-serif; font-weight: bold; cursor: pointer; }
+  .btn-primary { background: #c9a84c; color: #1a1a2e; }
+  .btn-primary:hover { background: #b8963a; text-decoration: none; }
+  .btn-secondary { background: transparent; color: #1a1a2e; border: 2px solid #1a1a2e; }
+  .btn-secondary:hover { background: #1a1a2e; color: #fff; text-decoration: none; }
+
+  /* Main */
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+  .section-title { font-size: 1.6rem; color: #1a1a2e; margin-bottom: 8px; padding-bottom: 10px; border-bottom: 3px solid #c9a84c; display: inline-block; }
+  .section-subtitle { color: #666; margin-bottom: 28px; font-size: 0.95rem; font-family: Arial, sans-serif; }
+
+  /* Article Grid */
+  .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-bottom: 50px; }
+  .article-card { background: #fff; border: 1px solid #e0d8c8; border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s; }
+  .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+  .card-badge { background: #c9a84c; color: #1a1a2e; font-size: 0.72rem; font-family: Arial, sans-serif; font-weight: bold; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .card-body { padding: 20px; }
+  .card-body h3 { font-size: 1.05rem; color: #1a1a2e; margin-bottom: 10px; line-height: 1.4; }
+  .card-body p { font-size: 0.88rem; color: #666; font-family: Arial, sans-serif; margin-bottom: 16px; line-height: 1.6; }
+  .card-link { font-family: Arial, sans-serif; font-size: 0.85rem; color: #8b4513; font-weight: bold; }
+  .card-link:hover { text-decoration: underline; }
+  .card-meta { font-size: 0.78rem; color: #aaa; font-family: Arial, sans-serif; margin-top: 14px; }
+
+  /* Value Box */
+  .value-highlight { background: #fff8e8; border: 2px solid #c9a84c; border-radius: 8px; padding: 24px; margin-bottom: 50px; display: flex; align-items: flex-start; gap: 18px; }
+  .value-highlight .icon { font-size: 2.5rem; flex-shrink: 0; }
+  .value-highlight h3 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 8px; }
+  .value-highlight p { font-size: 0.9rem; color: #555; font-family: Arial, sans-serif; }
+
+  /* Categories */
+  .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 50px; }
+  .cat-card { background: #fff; border: 1px solid #e0d8c8; border-radius: 8px; padding: 20px; text-align: center; transition: all 0.2s; }
+  .cat-card:hover { border-color: #c9a84c; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-decoration: none; }
+  .cat-icon { font-size: 2rem; margin-bottom: 10px; }
+  .cat-card h3 { font-size: 0.95rem; color: #1a1a2e; margin-bottom: 6px; }
+  .cat-card p { font-size: 0.8rem; color: #888; font-family: Arial, sans-serif; }
+
+  /* eBay CTA */
+  .ebay-cta { background: linear-gradient(135deg, #1a1a2e, #2d2d4e); color: #fff; border-radius: 8px; padding: 30px; margin-bottom: 40px; text-align: center; }
+  .ebay-cta h3 { font-size: 1.3rem; color: #c9a84c; margin-bottom: 10px; }
+  .ebay-cta p { color: #b0afc0; font-family: Arial, sans-serif; font-size: 0.9rem; margin-bottom: 20px; }
+  .btn-ebay { background: #e53238; color: #fff; padding: 12px 28px; border-radius: 4px; font-family: Arial, sans-serif; font-weight: bold; font-size: 0.95rem; display: inline-block; }
+  .btn-ebay:hover { background: #c82a2f; text-decoration: none; }
+
+  /* Footer */
+  footer { background: #1a1a2e; color: #b0afc0; padding: 40px 20px; margin-top: 20px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+  footer h4 { color: #c9a84c; margin-bottom: 12px; font-size: 0.95rem; }
+  footer a { color: #b0afc0; font-size: 0.85rem; font-family: Arial, sans-serif; display: block; margin-bottom: 6px; }
+  footer a:hover { color: #c9a84c; text-decoration: none; }
+  .footer-bottom { max-width: 1100px; margin: 24px auto 0; padding-top: 20px; border-top: 1px solid #3d3d5e; text-align: center; font-size: 0.78rem; font-family: Arial, sans-serif; }
+  .disclaimer { font-size: 0.78rem; color: #888; font-family: Arial, sans-serif; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🪙</div>
+      <div class="logo-text">
+        <h1>CoinWisdom</h1>
+        <p>Your Guide to Coin Values, Rare Finds &amp; Collecting</p>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="articles/morgan-dollar-value.html">Morgan Dollars</a>
+      <a href="articles/wheat-penny-guide.html">Wheat Pennies</a>
+      <a href="articles/silver-quarters.html">Silver Quarters</a>
+      <a href="articles/error-coins.html">Error Coins</a>
+      <a href="articles/coin-grading.html">Coin Grading</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Discover What Your Coins Are Really Worth</h2>
+  <p>Expert price guides, grading tips, and rare coin research — everything collectors need to buy smart, sell right, and find hidden treasures.</p>
+  <div class="hero-btns">
+    <a href="articles/morgan-dollar-value.html" class="btn btn-primary">Explore Price Guides →</a>
+    <a href="https://www.ebay.com/sch/i.html?_nkw=rare+coins&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=CAMPAIGN_ID&customid=&toolid=10001&mkevt=1" class="btn btn-secondary" target="_blank" rel="nofollow">Shop Rare Coins on eBay</a>
+  </div>
+</section>
+
+<main>
+
+  <div class="value-highlight">
+    <div class="icon">💡</div>
+    <div>
+      <h3>Did You Know? Many Common Coins Are Worth Far More Than Face Value</h3>
+      <p>A 1943 copper Lincoln cent can fetch $100,000+. Pre-1965 quarters contain 90% silver. Even modern error coins sell for hundreds. Our guides help you spot the valuable ones before they slip through your fingers.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Featured Price Guides</h2>
+  <p class="section-subtitle">In-depth articles with current market values, grading info, and what to look for</p>
+
+  <div class="articles-grid">
+    <div class="article-card">
+      <div class="card-badge">Morgan Dollars</div>
+      <div class="card-body">
+        <h3>1921 Morgan Dollar Value: What Is It Worth Today?</h3>
+        <p>The most common Morgan dollar — but condition and mint mark still determine whether it's worth $25 or $250. Full price breakdown inside.</p>
+        <a href="articles/morgan-dollar-value.html" class="card-link">Read Full Guide →</a>
+        <div class="card-meta">Updated March 2025 · 8 min read</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-badge">Lincoln Cents</div>
+      <div class="card-body">
+        <h3>Rare Wheat Pennies Worth Money: Complete Price Guide</h3>
+        <p>Not all wheat pennies are created equal. The 1909-S VDB can top $1,000 in circulated condition. Learn which dates to hunt and which are just common.</p>
+        <a href="articles/wheat-penny-guide.html" class="card-link">Read Full Guide →</a>
+        <div class="card-meta">Updated March 2025 · 10 min read</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-badge">Silver Coins</div>
+      <div class="card-body">
+        <h3>Silver Quarters to Look For: Pre-1965 Values Guide</h3>
+        <p>Pre-1965 quarters are 90% silver and worth far more than 25¢. But some dates and varieties can fetch $50–$500+. Here's what to check your change for.</p>
+        <a href="articles/silver-quarters.html" class="card-link">Read Full Guide →</a>
+        <div class="card-meta">Updated March 2025 · 9 min read</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-badge">Error Coins</div>
+      <div class="card-body">
+        <h3>Most Valuable US Error Coins: What to Look For</h3>
+        <p>Doubled dies, off-centers, wrong planchet errors — mint mistakes create the most exciting and valuable coins. A checklist of errors worth hunting.</p>
+        <a href="articles/error-coins.html" class="card-link">Read Full Guide →</a>
+        <div class="card-meta">Updated March 2025 · 11 min read</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-badge">Grading Guide</div>
+      <div class="card-body">
+        <h3>Coin Grading: MS65 vs MS63 and What It Means for Value</h3>
+        <p>Two points on the Sheldon scale can mean thousands of dollars difference. Learn how professional graders evaluate coins — and how to assess your own.</p>
+        <a href="articles/coin-grading.html" class="card-link">Read Full Guide →</a>
+        <div class="card-meta">Updated March 2025 · 9 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Browse by Category</h2>
+  <p class="section-subtitle">Find the coins you're researching</p>
+
+  <div class="categories">
+    <a href="articles/morgan-dollar-value.html" class="cat-card">
+      <div class="cat-icon">🦅</div>
+      <h3>Morgan &amp; Peace Dollars</h3>
+      <p>90% silver, high collector demand</p>
+    </a>
+    <a href="articles/wheat-penny-guide.html" class="cat-card">
+      <div class="cat-icon">🌾</div>
+      <h3>Lincoln Cents</h3>
+      <p>Wheat pennies 1909–1958</p>
+    </a>
+    <a href="articles/silver-quarters.html" class="cat-card">
+      <div class="cat-icon">⚪</div>
+      <h3>Silver Quarters</h3>
+      <p>Pre-1965 90% silver coins</p>
+    </a>
+    <a href="articles/error-coins.html" class="cat-card">
+      <div class="cat-icon">🔍</div>
+      <h3>Error Coins</h3>
+      <p>Mint mistakes = big premiums</p>
+    </a>
+    <a href="articles/coin-grading.html" class="cat-card">
+      <div class="cat-icon">📊</div>
+      <h3>Grading &amp; Value</h3>
+      <p>Understand the Sheldon scale</p>
+    </a>
+  </div>
+
+  <div class="ebay-cta">
+    <h3>🛒 Shop Rare Coins on eBay</h3>
+    <p>Find Morgan dollars, wheat pennies, silver coins, and error coins from thousands of verified sellers. Compare prices before you buy or sell.</p>
+    <a href="https://www.ebay.com/sch/i.html?_nkw=rare+coins+collection&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=CAMPAIGN_ID&customid=homepage&toolid=10001&mkevt=1" class="btn-ebay" target="_blank" rel="nofollow">Browse Rare Coins on eBay →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>🪙 CoinWisdom</h4>
+      <p style="font-size:0.82rem; line-height:1.6;">Expert coin price guides for collectors, sellers, and anyone who's found something interesting in their change.</p>
+    </div>
+    <div>
+      <h4>Price Guides</h4>
+      <a href="articles/morgan-dollar-value.html">Morgan Dollar Values</a>
+      <a href="articles/wheat-penny-guide.html">Wheat Penny Guide</a>
+      <a href="articles/silver-quarters.html">Silver Quarters</a>
+      <a href="articles/error-coins.html">Error Coins</a>
+      <a href="articles/coin-grading.html">Coin Grading</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="https://www.pcgs.com/prices" target="_blank" rel="nofollow">PCGS Price Guide</a>
+      <a href="https://www.ngccoin.com/price-guide/" target="_blank" rel="nofollow">NGC Price Guide</a>
+      <a href="https://www.ebay.com/sch/i.html?_nkw=rare+coins&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=CAMPAIGN_ID&customid=footer&toolid=10001&mkevt=1" target="_blank" rel="nofollow">eBay Coin Marketplace</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 CoinWisdom. All rights reserved.</p>
+    <p class="disclaimer">CoinWisdom participates in the eBay Partner Network. We may earn a commission on qualifying purchases. Coin values are estimates based on market data and are not guaranteed.</p>
+  </div>
+</footer>
+
+</body>
+</html>
